@@ -18,5 +18,33 @@ const newEmployee = () => {
              message: "ID:",
              name: "id"
          },
+         {
+            type: "input",
+            message: "Name:",
+            name: "name"
+          },
+          {
+            type: "input",
+            message: "Role:",
+            name: "role"
+          },
+          {
+            type: "input",
+            message: "Email:",
+            name: "email"
+          }
      ])
+     .then(async function(data) {
+         switch (data.role) {
+             case "Manager":
+                 await inquirer
+                 .prompt([
+                     {
+                       type: "input",
+                       message: "I see" + data.name + "is a manager. What is their office number?",
+                       name: "office"
+                     }
+                ])
+         }
+     });
 }
