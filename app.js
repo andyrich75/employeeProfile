@@ -9,3 +9,14 @@ const util = require("util");
 const writeFileAsync = util.promisify(fs.writeFile);
 
 const team = [];
+
+const newEmployee = () => {
+    inquirer
+     .prompt([
+         {
+             type: "input",
+             message: "ID:",
+             name: "id"
+         },
+     ])
+}
